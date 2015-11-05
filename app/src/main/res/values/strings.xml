@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Lucky Numbers</string>
+    <string name="action_settings">Settings</string>
+    <string name="remind_input">Potential lucky numbers:</string>
+    <string name="get_luck_numbers">Search</string>
+    <string name="init_numbers"> “1”, “42", “100848", “4938532894754”, “1234567”, “472844278465445”, 234541231020</string>
+</resources>

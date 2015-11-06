@@ -3,5 +3,5 @@
     <string name="action_settings">Settings</string>
     <string name="remind_input">Potential lucky numbers:</string>
     <string name="get_luck_numbers">Search</string>
-    <string name="init_numbers"> “1”, “42", “100848", “4938532894754”, “1234567”, “472844278465445”, 234541231020</string>
+    <string name="init_numbers"> “1”, “42", “100848", “4938532894754”, “1234567”, “472844278465445”, 23454113102047, 01020304050608,13012409051754,595801046910,Input Any String End With\",\"</string>
 </resources>

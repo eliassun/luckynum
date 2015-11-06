@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         btn_findLuckNumber.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String[] splitResults = splitLongStr(editview_luckynum.getText().toString());
+                String[] splitResults = SplitLongStr(editview_luckynum.getText().toString());
                 if(splitResults==null)
                     return;
                 List<String> l= Arrays.asList(splitResults);
@@ -123,8 +123,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private boolean IsCorrectDoubleDigits(String toCheckString, int depth, HashMap<String,Integer> foundDigitsMap) {
-        if((depth>7)||(toCheckString==null)||(toCheckString.length()<2)
-                ||(!foundDigitsMap.containsKey(toCheckString.substring(0,2)))||(foundDigitsMap.get(toCheckString.substring(0,2))>0))
+        if((depth>7)||(toCheckString==null)||(toCheckString.length()<2))
+            return false;
+        String key = GetKeyFromDoubleDigits(toCheckString.substring(0, 2));
+        if ((!foundDigitsMap.containsKey(key)) || (foundDigitsMap.get(key) > 0))
             return false;
         return true;
     }
@@ -149,7 +151,7 @@ public class MainActivity extends AppCompatActivity {
         boolean sd = IsCorrectSingleDigit(digits, depth, foundDigitsMap);
 
         if(dd) {
-            String  key   = digits.substring(0,2);
+            String  key   = GetKeyFromDoubleDigits(digits.substring(0, 2));
             Integer value = foundDigitsMap.get(key);
             foundDigitsMap.put(key,++value);
 
@@ -190,7 +192,7 @@ public class MainActivity extends AppCompatActivity {
             }else {
                 foundDigitsMap.put(key,((value-1)>=0)?(value-1):0);
                 if (dd) {
-                    key    = digits.substring(0,2);
+                    key    = GetKeyFromDoubleDigits(digits.substring(0,2));
                     value  = foundDigitsMap.get(key);
                     foundDigitsMap.put(key,++value);
 
@@ -208,7 +210,7 @@ public class MainActivity extends AppCompatActivity {
         return r;
     }
 
-    private String[] splitLongStr(String toSplit)
+    private String[] SplitLongStr(String toSplit)
     {
         if(toSplit==null)
             return null;
@@ -228,4 +230,13 @@ public class MainActivity extends AppCompatActivity {
         }
         return separated;
     }
+
+    private String GetKeyFromDoubleDigits(String doubleDigits)
+    {
+             if(doubleDigits.startsWith("0"))
+                 return doubleDigits.substring(1,2);
+             else
+                 return doubleDigits;
+    }
+
 }

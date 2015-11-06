@@ -21,7 +21,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginTop="5dp"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="200dp"
         android:layout_below="@+id/textview_remindInput"/>
 
     <Button android:id="@+id/btn_findLuckNumber"
@@ -38,7 +38,7 @@
         android:layout_marginTop="5dp"
         android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:layout_height="200dp"
         android:layout_below="@+id/btn_findLuckNumber"/>
 
 </RelativeLayout>

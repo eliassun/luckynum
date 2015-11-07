@@ -227,6 +227,12 @@ public class MainActivity extends AppCompatActivity {
             separated[i] = tmp;
             tmp = separated[i].replace("”","");
             separated[i] = tmp;
+            tmp = separated[i].replace(System.getProperty("line.separator"),"");
+            separated[i] = tmp;
+            tmp = separated[i].replace("\r","");
+            separated[i] = tmp;
+            tmp = separated[i].replace("\n","");
+            separated[i] = tmp;
         }
         return separated;
     }
